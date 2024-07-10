@@ -1,0 +1,435 @@
+.couponBox {
+    // padding: 2rem 2rem 0;
+    font-family: Montserrat, 'Noto Sans TC', '微軟正黑體', Arial, Helvetica, sans-serif;
+    @media only screen and (max-width: 1024px) {
+        // padding: 1.5rem 1.5rem 0;
+    }
+    li {
+        position: relative;
+        margin-bottom: .5rem;
+        * {
+            color: #440015;
+        }
+    }
+    .main {
+        width: 100%;
+        height: 10.8rem;
+        color: #3f3f3f;
+        background: url('@/assets/new/coupon_bg.png') top center no-repeat;
+        background-size: 100%;
+        transition: .3s all;
+        display: grid;
+        grid-template-columns: 80% auto;
+        gap: 1%;
+        @media only screen and (max-width: 1024px) {
+            height: 10rem;
+            background-size: 100% 100%;
+        }
+        @media only screen and (max-width: 767px) {
+            height: 9rem;
+        }
+        &:hover {
+            transform: scale(1.03);
+            filter: brightness(1.1);
+            @media only screen and (max-width: 991px) {
+                transform: none;
+                filter: none;
+            }
+        }
+        &.pe-none {
+            .btn.goBtn {
+                color: #b9b9b9;
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 1.3;
+            }
+        }
+        &.disabled {
+            pointer-events: none;
+        }
+    }
+    .box {
+        padding: 0 0.5rem 0 1rem;
+    }
+    .label {
+        width: 6.3rem;
+        @media only screen and (max-width: 767px) {
+            width: 17vw;
+        }
+        strong {
+            display: block;
+            width: 100%;
+            height: 6.3rem;
+            background: url('@/assets/new/coupon_label.png') top center no-repeat;
+            background-size: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 0 0.4rem;
+            text-align: center;
+            line-height: 1.1;
+            @media only screen and (max-width: 767px) {
+                // width: 14vw;
+                height: 17vw;
+                font-size: 3.5vw;
+                padding: 0 2vw;
+            }
+        }
+    }
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        padding-left: 0.8rem;
+    }
+    .h3 {
+        width: 100%;
+        // height: 27px;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        margin: 0;
+        @media only screen and (max-width: 767px) {
+            font-size: 15px;
+        }
+    }
+    .btn {
+        padding: 0 .5rem 0 0;
+        line-height: 1;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        @media only screen and (max-width: 767px) {
+            padding: 0 1vw 0 0;
+        }
+        span {
+            width: 100%;
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #fff;
+            @media only screen and (max-width: 1024px) {
+                font-size: 1.2rem;
+            }
+            @media only screen and (max-width: 767px) {
+                font-size: 4vw;
+            }
+        }
+        &.goBtn {
+            i {
+                margin-top: .3rem;
+                position: relative;
+                display: block;
+                &::before {
+                    content: "";
+                    width: 32px;
+                    height: 33px;
+                    background: url('@/assets/new/coupon_arrow.png') top center no-repeat;
+                    background-size: 100%;
+                    display: block;
+                    margin: auto;
+                    @media only screen and (max-width: 1024px) {
+                        width: 2vw;
+                        height: 2vw;
+                    }
+                    @media only screen and (max-width: 991px) {
+                        width: 4vw;
+                        height: 4vw;
+                    }
+                }
+            }
+        }
+        &.gotit span {
+            color: #b9b9b9;
+        }
+        &.theend span {
+            color: #b9b9b9;
+            // background-color: #c3c3c3;
+            
+        }
+    }
+    .date {
+        font-size: 1rem;
+        text-align: center;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        line-height: 1.3;
+        margin-top: .5rem;
+        opacity: .7;
+        @media only screen and (max-width: 1024px) {
+            margin-top: 0;
+        }
+        @media only screen and (max-width: 991px) {
+            margin-top: .3rem;
+        }
+        @media only screen and (max-width: 767px) {
+            font-size: 11px;
+            line-height: 1;
+            margin-top: 1vw;
+        }
+        @media only screen and (max-width: 330px) {
+            font-size: 9px;
+        }
+    }
+    &.disabled {
+        pointer-events: none;
+        .btn.goBtn {
+            color: #0042ca;
+            background-color: rgba($color: #fff, $alpha: .8);
+        }
+    }
+    .amt {
+        font-size: 3.3rem;
+        line-height: 1.1;
+        font-family: Montserrat, "Noto Sans TC";
+        font-weight: 700;
+        @media only screen and (max-width: 767px) {
+            font-size: 9vw;
+        }
+        strong {
+            letter-spacing: -3px;
+            line-height: inherit;
+        }
+        small {
+            font-size: 50%;
+            font-weight: 500;
+            vertical-align: 3px;
+            line-height: inherit;
+            @media only screen and (max-width: 1600px) {
+                // font-size: 3rem;
+            }
+        }
+    }
+}
+.collection {
+    margin-top: 1rem;
+    font-family: Montserrat, 'Noto Sans TC', '微軟正黑體', Arial, Helvetica, sans-serif;
+    .couponBox {
+        padding: 0;
+        .main {
+            display: block;
+            height: 12rem;
+            background: url('@/assets/new/coupon_bg-s.png') top center no-repeat;
+            background-size: 100%;
+            padding: 0;
+            @media only screen and (max-width: 1024px) {
+                background-size: 100% 100%;
+            }
+            @media only screen and (max-width: 767px) {
+                height: 34vw;
+            }
+            &:hover {
+                transform: none;
+            }
+        }
+        .box {
+            height: 9.3rem;
+            padding: 0 0.8rem;
+            // margin-bottom: 0.4rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            @media only screen and (max-width: 767px) {
+                height: 8.3rem;
+            }
+        }
+        .label {
+            width: 5rem;
+            strong {
+                width: 100%;
+                height: 5rem;
+            }
+        }
+        .content {
+            display: block;
+            @media only screen and (max-width: 1024px) {
+                padding: 0 0 0 1.3rem;
+            }
+            @media only screen and (max-width: 767px) {
+                padding: 0 0 0 2vw;
+            }
+        }
+        .h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            @media only screen and (max-width: 767px) {
+                font-size: 15px;
+            }
+        }
+        .amt {
+            padding-right: 0.5rem;
+            font-size: 3rem;
+            line-height: 0.9;
+        }
+        .btn {
+            span {
+                width: auto;
+                font-size: 1.3rem;
+                @media only screen and (max-width: 767px) {
+                    font-size: 4vw;
+                }
+            }
+            &.goBtn {
+                i {
+                    margin: 5px 0 0 5px;
+                    &::before {
+                        content: "";
+                        width: 20px;
+                        height: 22px;
+                        @media only screen and (max-width: 1024px) {
+                            width: 1.5vw;
+                            height: 1.5vw;
+                        }
+                        @media only screen and (max-width: 991px) {
+                            width: 3vw;
+                            height: 3vw;
+                        }
+                    }
+                }
+            }
+            br {
+                display: none;
+            }
+        }
+        .date {
+            font-size: .9rem;
+            margin-top: .4rem;
+            @media only screen and (max-width: 767px) {
+                font-size: 10px;
+            }
+        }
+    }
+    .swiper {
+        padding-bottom: 1.5rem !important;
+    }
+    .swiper-pagination {
+        .swiper-pagination-bullet {
+            background-color: rgba($color: #fff, $alpha: 1);
+            &.swiper-pagination-bullet-active {
+                background-color: var(--swiperActive);
+            }
+        }
+    }
+}
+
+// 一鍵領, 更多折價券
+.getAll {
+    margin: 2rem 0 1.5rem;
+    .btn {
+        width: 18rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.3rem;
+        font-weight: 700;
+        line-height: 1.2;
+        border: 2px solid #fff;
+        border-radius: 10rem;
+        color: #fff;
+        margin: 0 .5rem;
+        position: relative;
+        transition: .3s all;
+        @media only screen and (max-width: 767px) {
+            font-size: 5.5vw;
+        }
+        &:hover {
+            transform: scale(1.1);
+            filter: brightness(1.05);
+            @media only screen and (max-width: 991px) {
+                transform: none;
+                filter: none;
+            }
+        }
+        i {
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+            }
+        }
+    }
+    #getAllcoupon {
+        background: #e9083d;
+        padding: 0.375rem 40px 0.75rem 0;
+        @media only screen and (max-width: 767px) {
+            padding-right: 9vw;
+        }
+        i::before {
+            width: 4.5rem;
+            height: 5.6rem;
+            background: url('@/assets/new/coupon_click.png') top center no-repeat;
+            background-size: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(2%, -21%);
+            @media only screen and (max-width: 1024px) {
+                width: 5vw;
+                height: 6.5vw;
+                // margin: -7% 0 0 21%;
+            }
+            @media only screen and (max-width: 991px) {
+                width: 9vw;
+                height: 11.5vw;
+            }
+            @media only screen and (max-width: 767px) {
+                width: 10vw;
+                height: 13vw;
+            }
+        }
+        &.pe-none {
+            filter: grayscale(1);
+            padding: 0.375rem 0.75rem;
+            i::before {
+                display: none;
+            }
+        }
+        span {
+            text-align: left;
+            i {
+                position: relative;
+            }
+        }
+    } 
+    .moreCoupon {
+        background: #fff;
+        color: #422f27;
+    }
+    small {
+        width: 100%;
+        display: block;
+        font-size: 50%;
+    }
+}
+// 領取折價券燈箱
+#takeCoupon {
+    h4 {
+        text-align: center;
+        font-size: 2rem;
+        padding: 1rem 0 2rem;
+        color: var(--blue);
+        a {
+            font-size: inherit;
+            font-weight: inherit;
+            &.warning {
+                color: var(--red);
+            }
+        }
+    }
+    object {
+        width: 10rem;
+        display: block;
+        margin: 2rem auto 0;
+        &.accept {
+            margin: 0 auto;
+            width: 13rem;
+        }
+    }
+}

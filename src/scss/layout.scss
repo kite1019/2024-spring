@@ -1,0 +1,388 @@
+@charset "UTF-8";
+// @import "bundle/_bootstrap-5.1.1.min.scss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import "layout/_mixins.scss";
+@import "layout/_reset.scss";
+
+:root {
+    --font-color: #3c3c3c;
+    --red: #ce0139;
+    --red-deep: #940100;
+    --gutter: 20px;
+    --pchomeRed: #D7000F;
+    --swiperActive: #D7000F;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', '微軟正黑體', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+html, body {
+    color: #000;
+    background-color: #d4d4d4;
+    font-family: 'Noto Sans TC', '微軟正黑體', Arial, Helvetica, sans-serif;
+    position: relative;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    width: 100%;
+    position: static;
+    overflow-x: hidden;
+    scroll-behavior: initial !important;
+    background-attachment: fixed;
+    // background-size: 160rem;
+    @media only screen and (max-width: 1440px) {
+        font-size: 1.05vw;
+    }
+    @media only screen and (max-width: 1024px) {
+        font-size: 1.1vw;
+        scroll-behavior: smooth !important;
+    }
+    // @media only screen and (max-width: 991px) {
+    //     padding: 0;
+    //     font-size: 2.3vw;
+    //     background-size: 100%;
+    // }
+    // @media only screen and (max-width: 767px) {
+    //     font-size: 3.2vw;
+    // }
+}
+html {
+    position: static;
+}
+span, i, small, strong, b {
+    vertical-align: 0;
+    font-style: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    letter-spacing: inherit;
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block
+}
+/* ---------- 組成  ----------*/
+
+// // 動態
+// @import 'layout/_ani.scss';
+// 折價券
+// @import 'components/_coupon.scss';
+// @import 'components/_promoPD.scss';
+@import 'components/_guideBox.scss';
+
+h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+}
+.arrow {
+    border: solid rgba(255,255,255,.7);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: -5px;
+}
+.arRight {
+    transform: rotate(-45deg);
+}
+.arLeft {
+    transform: rotate(135deg);
+}
+.arUp {
+    transform: rotate(-135deg);
+}
+.d-block        { width: 100%; }
+.hide { display: none !important;}
+.absolute { position: absolute; top: 0; left: 50%;}
+.radius{
+    border-radius: 2.5rem;
+}
+.hover-light {
+    img {
+        transition: .3s all;
+    }
+    &:hover img {
+        filter: brightness(1.1);
+        transform: scale(1.05);
+    }
+}
+.swiper {
+    padding-bottom: 1.5rem !important;
+    a {
+        &:hover img {
+            transform: none !important;
+        }
+    }
+}
+.swiper-button-next, .swiper-button-prev {
+    background-color: rgba($color: #000000, $alpha: .8);
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    @media only screen and (max-width: 767px) {
+        width: 35px;
+        height: 35px;
+    }
+    &:after, &:after {
+        font-size: 1.85rem;
+        color: #fff;
+        @media only screen and (max-width: 767px) {
+            font-size: 1rem;
+        }
+    }
+}
+.swiper-pagination {
+    line-height: 1;
+    bottom: 0 !important;
+    .swiper-pagination-bullet {
+        opacity: 1;
+        background-color: #e9b268;
+        transition: .3s all;
+        &.swiper-pagination-bullet-active {
+            opacity: 1;
+            background-color: var(--swiperActive);
+            width: 25px;
+            border-radius: 50px;
+        }
+    }
+}
+#smallBn {
+    overflow: hidden;
+}
+.right__menu .menu_box {
+    li.active i {
+        width: 18px;
+        height: 18px;
+        display: block;
+        // background: url('@/assets/new/menu_icon.png') top center no-repeat;
+        background-size: 100%;
+        margin: 5px 3px 0 0;
+    }
+	@media only screen and (max-width: 991px) {
+        li a br {
+            display: none;
+        }
+    }
+}
+#appTopNav {
+	@media only screen and (max-width: 991px) {
+        position: relative;
+        .nav_btn {
+            right: 2.5%;
+            border-radius: 0 10px 10px 0;
+        }
+        &.active {
+            .right__menu {
+                margin: 0;
+                width: 100%;
+                position: fixed;
+                border-radius: 0;
+            }
+            .nav_btn {
+                position: fixed;
+                height: 43px;
+                right: 0;
+            }
+        }
+
+    }
+}
+.w-960 {
+    width: 60rem;
+}
+.w-1260 {
+    width: 78.75rem;
+}
+.w-1180 {
+    width: 73.75rem;
+}
+.w-1080 {
+    width: 67.5rem;
+}
+.pd-box {
+    line-height: 1.5;
+    .pic {
+        padding: 0.5rem;
+        aspect-ratio: 1;
+    }
+    .hotline {
+        height: 36px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        background-color: #E7C77D;
+        color: #000;
+    }
+    .pd_title {
+        height: 52px;
+        font-size: 17px;
+        color: #000;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+    .price {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        font-family: Montserrat, "Noto Sans TC";
+        padding-bottom: 0.3rem;
+        small {
+            display: block;
+            text-decoration: line-through;
+            color: #595959;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+        strong {
+            color: #ff5a32;
+            font-size: 31px;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+        }
+        i {
+            font-weight: 500;
+            font-size: 60%;
+        }
+    }
+}
+
+// ------------------------------
+section {
+    width: 100%;
+    position: relative;
+}
+.container {
+    // max-width: 73rem;
+    padding: 0;
+    position: relative;
+    @media only screen and (max-width: 991px) {
+        width: 95% !important;
+        // width: 640px !important;
+    }
+}
+.outBox {
+    width: 78.75rem;
+    margin: 0 auto;
+    @media only screen and (max-width: 991px) {
+        width: 98%;
+    }
+}
+.wrap {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    @media only screen and (max-width: 991px) {
+        // margin-top: 40px;
+        // height: 100%;
+        overflow: visible;
+    }
+}
+.kvBg {
+    width: 160rem;
+    transform: translate(-50%, 0);
+    @media only screen and (max-width: 991px) {
+        width: 100%;
+    }
+}
+.eventGuide {
+    width: 12rem;
+    transform: translate(17rem, -2.2rem);
+    transition: .3s ease;
+    &:hover {
+        filter: brightness(1.1);
+    }
+}
+
+// ------------------------------
+.topBnBox {
+    max-width: 60rem;
+    width: 100%;
+    margin: 0 auto 1rem;
+}
+
+
+#bank {
+    padding: 4rem 0 0;
+    margin-bottom: 4rem;
+    overflow: hidden;
+    .swiper {
+        overflow: visible;
+        padding-bottom: 1.5rem;
+    }
+    .bankBox {
+        width: 2500px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        @media only screen and (max-width: 1024px) {
+            width: 2000px;
+        }
+        @media only screen and (max-width: 991px) {
+            width: 100vw;
+        }
+    }
+}
+
+
+
+// 燈箱
+#calendar {
+    h5 {
+        width: 100%;
+        text-align: center;
+        font-size: 1.6rem;
+        color: #fff;
+        @media only screen and (max-width: 767px) {
+            font-size: 7vw;
+        }
+    }
+    .modal-dialog {
+        width: 43rem;
+        max-width: 100%;
+    }
+    .modal-content {
+        background-color: #000;
+    }
+    .modal-header {
+        border: 0;
+        padding-bottom: 0;
+        .btn-close {
+            opacity: 1;
+            border-radius: 0;
+            padding: 0;
+            width: 2.5rem;
+            height: auto;
+            position: absolute;
+            right: -2px;
+            top: -5px;
+            @media only screen and (max-width: 767px) {
+                width: 10vw;
+                right: 13px;
+                top: -15px;
+            }
+        }
+    }
+    .modal-body {
+        @media only screen and (max-width: 767px) {
+            padding: 0.5rem 3px 1rem;
+        }
+    }
+    .modal-dialog {
+        @media only screen and (max-width: 767px) {
+            margin: 0;
+        }
+    }
+}
