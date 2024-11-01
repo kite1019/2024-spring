@@ -1,15 +1,60 @@
-@mixin respond-to($breakpoint) {
-    @if $breakpoint == desktop {
-        @media (min-width: 1024px) {
-            @content;
-        }
-    } @else if $breakpoint == tablet {
-        @media (min-width: 768px) and (max-width: 1023px) {
-            @content;
-        }
-    } @else if $breakpoint == phone {
-        @media (max-width: 767px) {
-            @content;
-        }
-    }
+$keyRed: #d32226;
+$keyBlue: #158bca;
+$lightBlue: #00b0ec;
+$mediumBlue: #cce6f8;
+$grayBlue: #dfeff5;
+$borderGray: #CCCCCC;
+$textGray: #3f3f3f;
+$lightGray: #f2f2f2;
+$btnGray: #818181;
+$labelGray: #a2a2a2;
+$mediumGrey: #dcdcdc;
+$modalGrey: #f7f7f7;
+
+// -- media query
+$size: (
+  maxDesktop: '1920px',
+  noteBook: '1600px',
+  padXXL: '1366px',
+  padXL: '1024px',
+  pad: '992px',
+  mobileXL: '767px',
+  mobileS: '360px',
+);
+
+
+
+//
+// clearfix
+//
+@mixin clearfix {
+  & {
+    zoom: 1;
+  }
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+@mixin clearself {
+  overflow: hidden;
+}
+
+@mixin setMediaQueries($media) {
+  @if $media == pc {
+    @media only screen and (min-width: 1024px) { @content; }
+  }
+  @else if $media == pad_h {
+    @media only screen and (min-width: 991px) and (max-width: 1023px)  { @content; }
+  }
+  @else if $media == pad_v {
+    @media only screen and (min-width: 768px) and (max-width: 991px) { @content; }
+  }
+  @else if $media == phone {
+    @media only screen and (min-width: 0px) and (max-width: 767px) { @content; }
+  }
 }
